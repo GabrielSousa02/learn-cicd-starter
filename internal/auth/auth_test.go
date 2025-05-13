@@ -7,10 +7,10 @@ import (
 )
 
 func TestGetAPIKey(t *testing.T) {
-	httpHeader := http.Header{ }
+	httpHeader := http.Header{}
 	httpHeader.Add("Authorization", "ApiKey my-fake-api-key")
 	got, gotAPIError := GetAPIKey(httpHeader)
-	want  := "my-fake-api-key"
+	want := "my-fake-api-key"
 
 	if gotAPIError != nil {
 		t.Fatalf("expected: no errors, got %v", gotAPIError)
