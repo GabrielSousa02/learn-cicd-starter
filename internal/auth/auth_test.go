@@ -8,8 +8,7 @@ import (
 
 func TestGetAPIKey(t *testing.T) {
 	httpHeader := http.Header{ }
-	// TODO: Fail test to check if CI works
-	// httpHeader.Add("Authorization", "ApiKey my-fake-api-key")
+	httpHeader.Add("Authorization", "ApiKey my-fake-api-key")
 	got, gotAPIError := GetAPIKey(httpHeader)
 	want  := "my-fake-api-key"
 
